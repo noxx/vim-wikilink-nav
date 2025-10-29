@@ -6,6 +6,5 @@
   "description": "Vim-style Ctrl+N / Ctrl+P to navigate the inline wikilink suggestion ([[ ... ]]) only; Blocks global hotkeys only while popup is open. Desktop-only.",
   "author": "noxx",
   "authorUrl": "https://github.com/noxx",
-  "isDesktopOnly": true,
-  "main": "main.js"
+  "isDesktopOnly": true
 }
