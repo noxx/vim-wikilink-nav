@@ -1,29 +1,26 @@
-# Vim Wikilink Suggest Navigation
+# vim-wikilink-nav
 
-Vim-style **Ctrl+N / Ctrl+P** to navigate the **inline wikilink** suggestion popup (`[[ ... ]]`).  
-**Enter** or **Ctrl+Enter** accepts the highlighted suggestion.  
-Blocks global hotkeys (e.g., "New note") **only while** the popup is open. Desktop-only. Vim-safe.
+Obsidian plugin. When the `[[ wikilink ]]` suggestion popup is open, Ctrl+N and Ctrl+P move the selection, and Enter or Ctrl+Enter accepts it. Same idea as scrolling completions in vim.
 
-## Features
-- Ctrl+N / Ctrl+P: move selection in the wikilink suggest list
-- Enter / Ctrl+Enter: accept selection
-- Works with Vim mode ON or OFF
-- No settings, tiny footprint
+Scope is intentionally narrow. It only touches the wikilink popup. Quick Switcher, Command Palette, tag suggestions are untouched.
 
-## Scope
-- **Inline wikilink suggestions only** (`[[ ... ]]`)
-- Does **not** affect Quick Switcher, Command Palette, or tag `#` suggestions
+## Why
+
+Obsidian's wikilink popup uses arrow keys. I use vim mode in Obsidian. Reaching for arrows every time I typed `[[` got old fast. Couldn't find an existing plugin that did just this without trying to remap the whole app, so I wrote it.
 
 ## Install
-- From Community Plugins (after approval), or
-- Manual: copy `manifest.json` + `main.js` into `.obsidian/plugins/vim-wikilink-nav/` and enable
 
-## Compatibility
-- Obsidian ≥ **1.4.0**
-- Windows/Linux (desktop). macOS works if you map Ctrl keys; Cmd support could be added later.
+If it's been approved into the Community Plugins list, install it from there.
+
+Otherwise, copy `manifest.json` and `main.js` into `.obsidian/plugins/vim-wikilink-nav/` and enable the plugin in Settings.
 
 ## Notes
-- Relies on `.suggestion-container` / `.suggestion-item`. If Obsidian changes these, update the selectors.
+
+- Desktop only (Windows / Linux). I don't have a Mac to test Cmd bindings. PR welcome if you do.
+- Requires Obsidian 1.4.0 or newer.
+- Global Ctrl+N (New note) is suppressed while the popup is open and restored when it closes. If a new note appears when you didn't ask for one, that's a bug, please open an issue.
+- The plugin works by reading `.suggestion-container` / `.suggestion-item` DOM classes. If Obsidian changes these in a future version it will silently break. Fix is a one-line selector swap.
 
 ## License
-MIT © noxx
+
+MIT
