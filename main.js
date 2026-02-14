@@ -1,3 +1,4 @@
+// vim-wikilink-nav
 const { Plugin, Scope } = require('obsidian');
 
 module.exports = class CtrlNPSuggestNav extends Plugin {
